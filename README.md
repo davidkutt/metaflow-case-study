@@ -30,7 +30,7 @@ Viel Erfolg!
 
 ## Die Lösung
 
-Dieses Repository enthält drei JavaScript-basierte Lösungen, die beide für die Ausführung direkt in der Entwicklerkonsole des Browsers konzipiert sind.
+Dieses Repository enthält JavaScript-basierte Lösungen, die für die Ausführung direkt in der Entwicklerkonsole des Browsers konzipiert sind.
 
 ### 1. `highlight-texts.js`
 Einfaches Skript zum Finden und Kenntlich machen von Texten
