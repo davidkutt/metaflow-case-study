@@ -1,6 +1,6 @@
 function translate() {
 
-  const DEBUG_MODE = false;
+  const DEBUG_MODE = true;
 
   if (DEBUG_MODE) {
     if (!document.querySelector('#translation-debug-style')) {
@@ -42,6 +42,7 @@ function translate() {
     ['weeks', 'Wochen'], // Plural first
     ['week', 'Woche'],
     ['Country', 'Land'],
+    ['Germany', 'Deutschland']
   ];
 
   function localizeNode(node) {
@@ -73,6 +74,8 @@ function translate() {
       const shortDateRegex = /(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(?!,)/g;
       modifiedText = modifiedText.replace(shortDateRegex, '$1. $2.');
 
+      const addressRegex = /(\d+)\s+([a-zA-Z\s,]+)/g;
+      modifiedText = modifiedText.replace(addressRegex, '$2 $1');
 
       if (originalText !== modifiedText) {
         textNode.nodeValue = modifiedText;
