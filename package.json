@@ -1,0 +1,10 @@
+{
+  "name": "metaflow-case-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "translator-v1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}
