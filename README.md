@@ -1,44 +1,56 @@
 # Case Study: Lokalisierung einer Shopify App
 
-Dieses Repository enthält die Lösung für die technische Case Study von MetaFlow, präsentiert am [Datum deiner Präsentation].
+Dieses Repository enthält die Lösung für die technische Case Study von MetaFlow, präsentiert am 24.07.2025.
 
 ---
 
-## Die Herausforderung (Original Case Study)
+## 🎯 Die Herausforderung
 
-Wir nutzen die Shopify-App StayAI, deren Benutzeroberfläche für Kunden jedoch auf Englisch ist. In den App-Einstellungen können eigene Übersetzungen in beliebigen Sprachen hinterlegt werden. Ein E-Commerce-Manager hat bereits alle deutschen Übersetzungen eingetragen, jedoch ist dir aufgefallen, dass einige Übersetzungen fehlen und die Formate für Datum und Währung teilweise falsch sind. Weder der Support noch die Dokumentation bieten hierbei Hilfe, und die Installation einer anderen App ist keine Option.
+Die Aufgabe bestand darin, ein kritisches Problem in einer Live-Umgebung unter strengen Vorgaben zu lösen.
 
-In den Einstellungen findest du drei Textbereiche, in denen HTML, CSS und JavaScript hinzugefügt werden können.
+* 🐛 **Unvollständige Übersetzung:** Die Benutzeroberfläche einer Shopify App (StayAI) war teilweise auf Englisch, obwohl deutsche Übersetzungen hinterlegt waren.
 
-**Anforderungen:**
-● Sorge dafür, dass alle Übersetzungen auf Deutsch sind und die Formate für Datum, Uhrzeit und Währung korrekt dargestellt werden.
-● Falls du zur Lösung des Problems Code erstellst, veröffentliche diesen bitte auf GitHub oder GitLab und sende den Link zum Repository mindestens 1 Stunde vor unserem Termin an sebastian.b@omos-media.de
-● Solltest du Fragen zur Aufgabe haben, zögere nicht, diese zu stellen: sebastian.b@omos-media.de
+* 📅 **Falsche Formate:** Datums- und Währungsformate wurden nicht korrekt für den deutschen Markt dargestellt.
 
-**Ablauf der Präsentation deiner Lösung:**
-● Du hast 15 Minuten Zeit, um deine Lösung zu präsentieren.
-● Zeige bitte auf, wie du vorgegangen bist.
-● Welche Herausforderungen hattest du?
-● Wir werden deinen Code gemeinsam live über die Browser Console testen. Bereite ihn daher so vor, dass dieser einfach zu testen ist.
-
-**Zum selbst Testen deines Codes kannst du die Webseite verwenden.**
-https://metaflow-x-casestudy.lovable.app/?name=David
-
-Viel Erfolg!
+* 🚫 **Strikte Einschränkungen:** Der App-Support bot keine Hilfe und die Installation einer alternativen App war keine Option.
 
 ---
 
-## Die Lösung
+## 🕵️ Vorgehensweise
 
-Dieses Repository enthält JavaScript-basierte Lösungen, die für die Ausführung direkt in der Entwicklerkonsole des Browsers konzipiert sind.
-
+* **Untersuchung der Seite:**
+    * Prüfung, ob bestehende `<script>`-Tags oder `translation keys` für eine Frontend-Übersetzung genutzt werden können. (Ergebnis: Nein ❌)
+* **Planänderung:**
+    * Entscheidung, die Seite clientseitig per Skript zu überarbeiten, da kein direkter Zugriff möglich war.
+* **Entwicklung & Problemlösung:**
+    * Identifizierung aller fehlerhaften Texte durch schnelles Prototyping ("Vibecoding").
+    * Erstellung eines ersten Skripts mit KI-Unterstützung. 🤖
+    * Erstes Ergebis: nicht alle Texte übersetzt. 
+      * Dynamisches Rendering über ein Skript? Nein ❌ 
+      * Aber: Testing zeigt, dass nur die erste Seite übersetzt wird ✅
+    * Implementierung mittels `MutationObserver`
+    * Debugging und Erweiterung der Übersetzungsliste.
+* **Zwischenfazit:**
+    * Eine voll funktionsfähige erste Version stand nach ca. 1,5 Stunden. ✅
+    * Deutsche Nutzer können wieder problemlos ihre MetaFlow Subscriptions. ✅
+* **Problem:**
+  * Sollte das Problem bestehen bleiben, müssen Texte im Skript angepasst/hinzugefügt werden 🚧
+* **Ausblick:**
+  * Sollte das Problem bestehen bleiben: Backend Service, der eine Translations Datei pflegt
+  * Achtung - Zeitgrab! 🚩⛔
+* **Ergebnis:**
+    * Entwicklungsstopp für Service. Starte Vorbereitung der Präsentation ✅
+    * Gesamtdauer (ca. 1 PT)
+* **Feedback:**
+    * "Erster Kunde hat sich beschwert", dass 2 Übersetzungen fehlen. Ups"
+  
 ### 1. `highlight-texts.js`
 Einfaches Skript zum Finden und Kenntlich machen von Texten
-### 1. `translator-v1.js`
+### 2. `translator-v1.js`
 Erste und einfache Lösung mit Problemen
 
-### 2. `solution-refactored.js`
-Verbesserte Version
+### 3. `translator-v2.js`
+Verbesserte Version mit MutationObserver
 
 ---
 

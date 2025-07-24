@@ -1,7 +1,6 @@
 function translate() {
-  'use strict';
 
-  const DEBUG_MODE = true;
+  const DEBUG_MODE = false;
 
   if (DEBUG_MODE) {
     if (!document.querySelector('#translation-debug-style')) {
@@ -20,6 +19,8 @@ function translate() {
   const processedNodes = new WeakSet();
 
   const translations = [
+    ['City', 'Stadt'],
+    ['Paused Subscriptions', 'Pausierte Abonnements'],
     ['Update your delivery address for subscriptions', 'Aktualisiere deine Lieferadresse für Abonnements'],
     ['Street Address', 'Straße und Hausnummer'],
     ['Postal Code', 'Postleitzahl'],
